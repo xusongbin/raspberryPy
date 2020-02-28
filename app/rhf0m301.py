@@ -69,6 +69,9 @@ def lgw_spi_rb(addr, size):
     gpio_ctl(CS0, True)
     return buf
 
+def sx1301_read_version():
+    return lgw_spi_r(1)
+
 if __name__ == "__main__":
     spi_init()
-    print(lgw_spi_r(int(sys.argv[1])))
+    print(sx1301_read_version())
